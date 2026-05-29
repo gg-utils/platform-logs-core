@@ -1,0 +1,56 @@
+{
+  "name": "@gg-utils/platform-logs-core",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Product-neutral platform log discovery, budget, validation, and tail process primitives.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./discover-log-files": {
+      "types": "./src/discover-log-files.ts",
+      "default": "./src/discover-log-files.ts"
+    },
+    "./parse-env-number": {
+      "types": "./src/parse-env-number.ts",
+      "default": "./src/parse-env-number.ts"
+    },
+    "./tail-process": {
+      "types": "./src/tail-process.ts",
+      "default": "./src/tail-process.ts"
+    },
+    "./tokens-to-char-budget": {
+      "types": "./src/tokens-to-char-budget.ts",
+      "default": "./src/tokens-to-char-budget.ts"
+    },
+    "./validation": {
+      "types": "./src/validation.ts",
+      "default": "./src/validation.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/",
+    "src/",
+    "!src/**/*.unit.test.ts",
+    "README.md",
+    "tsconfig.json",
+    "tsconfig.build.json"
+  ],
+  "engines": {
+    "node": ">=24.11.1 <25",
+    "npm": ">=9.0.0"
+  },
+  "packageManager": "npm@11.12.1",
+  "scripts": {
+    "build": "node ../../node_modules/typescript/bin/tsc -p tsconfig.build.json",
+    "type-check": "node ../../node_modules/typescript/bin/tsc --noEmit -p tsconfig.json",
+    "test": "node ../../node_modules/tsx/dist/cli.mjs --test \"src/**/*.unit.test.ts\""
+  }
+}
