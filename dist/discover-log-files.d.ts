@@ -49,4 +49,3 @@ export declare function logTail_resolveNthNewestMatchingFile(options: {
     /** 1-based index (same as bash sed -n "${run_index}p"). */
     indexOneBased: number;
 }): string | undefined;
-//# sourceMappingURL=discover-log-files.d.ts.map

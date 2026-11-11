@@ -36,13 +36,13 @@ function withTempDir(callback: (directory: string) => void): void {
   }
 }
 
-test("logTail_tokensToCharBudget matches legacy rounding", () => {
+void test("logTail_tokensToCharBudget matches legacy rounding", () => {
   assert.equal(logTail_tokensToCharBudget(5, 4), 20);
   assert.equal(logTail_tokensToCharBudget(1, 4.1), 5);
   assert.equal(logTail_tokensToCharBudget(1, 0.05), 1);
 });
 
-test("logTail_basenameMatchesSimpleGlob matches a single-star pattern", () => {
+void test("logTail_basenameMatchesSimpleGlob matches a single-star pattern", () => {
   assert.equal(
     logTail_basenameMatchesSimpleGlob("platform-foo.log", "platform-*.log"),
     true,
@@ -53,7 +53,7 @@ test("logTail_basenameMatchesSimpleGlob matches a single-star pattern", () => {
   );
 });
 
-test("logTail_listMatchingFilesByMtimeDesc orders by mtime", () => {
+void test("logTail_listMatchingFilesByMtimeDesc orders by mtime", () => {
   withTempDir((directory) => {
     const older = path.join(directory, "platform-a.log");
     const newer = path.join(directory, "platform-b.log");
@@ -72,7 +72,7 @@ test("logTail_listMatchingFilesByMtimeDesc orders by mtime", () => {
   });
 });
 
-test("logTail_resolveLatestLogFile falls back to latest symlink", () => {
+void test("logTail_resolveLatestLogFile falls back to latest symlink", () => {
   withTempDir((directory) => {
     const target = path.join(directory, "platform-x.log");
     fs.writeFileSync(target, "x");
@@ -88,7 +88,7 @@ test("logTail_resolveLatestLogFile falls back to latest symlink", () => {
   });
 });
 
-test("logTail_resolveNthNewestMatchingFile returns the requested index", () => {
+void test("logTail_resolveNthNewestMatchingFile returns the requested index", () => {
   withTempDir((directory) => {
     const older = path.join(directory, "platform-old.log");
     const newer = path.join(directory, "platform-new.log");
@@ -117,19 +117,19 @@ test("logTail_resolveNthNewestMatchingFile returns the requested index", () => {
   });
 });
 
-test("validation helpers accept positive int strings", () => {
+void test("validation helpers accept positive int strings", () => {
   assert.equal(logTail_isPositiveIntString("1"), true);
   assert.equal(logTail_isPositiveIntString("0"), false);
   assert.equal(logTail_isPositiveIntString("01"), false);
 });
 
-test("validation helpers parse strict positive chars-per-token values", () => {
+void test("validation helpers parse strict positive chars-per-token values", () => {
   assert.equal(logTail_parseCharsPerTokenStrictPositive("4"), 4);
   assert.equal(logTail_parseCharsPerTokenStrictPositive("3.8"), 3.8);
   assert.throws(() => logTail_parseCharsPerTokenStrictPositive("0"));
 });
 
-test("validation helpers match chars-per-token format", () => {
+void test("validation helpers match chars-per-token format", () => {
   assert.equal(logTail_isCharsPerTokenFormat("0"), true);
   assert.equal(logTail_isCharsPerTokenFormat("4.2"), true);
 });

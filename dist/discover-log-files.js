@@ -131,4 +131,3 @@ export function logTail_resolveNthNewestMatchingFile(options) {
     }
     return sorted[idx];
 }
-//# sourceMappingURL=discover-log-files.js.map

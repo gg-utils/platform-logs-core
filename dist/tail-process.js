@@ -52,4 +52,3 @@ export function logTail_stopTail(child) {
         throw error;
     }
 }
-//# sourceMappingURL=tail-process.js.map

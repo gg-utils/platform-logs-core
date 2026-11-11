@@ -19,4 +19,3 @@ export declare function logTail_isCharsPerTokenFormat(value: string): boolean;
  * @throws Error with `INVALID_FORMAT` or `NOT_POSITIVE` markers when validation fails.
  */
 export declare function logTail_parseCharsPerTokenStrictPositive(value: string): number;
-//# sourceMappingURL=validation.d.ts.map

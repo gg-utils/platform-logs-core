@@ -18,4 +18,3 @@ export function logTail_tokensToCharBudget(tokens, charsPerToken) {
     const floored = Math.floor(value);
     return value === floored ? floored : floored + 1;
 }
-//# sourceMappingURL=tokens-to-char-budget.js.map

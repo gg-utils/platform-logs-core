@@ -11,4 +11,3 @@
  * (awk int() truncates toward zero; for positive values, floor).
  */
 export declare function logTail_tokensToCharBudget(tokens: number, charsPerToken: number): number;
-//# sourceMappingURL=tokens-to-char-budget.d.ts.map

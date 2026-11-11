@@ -21,4 +21,3 @@ export declare function logTail_parseEnvPositiveInt(raw: string | undefined, def
  * USAGE: unlike {@link logTail_parseEnvPositiveInt}, this accepts zero and negative numbers when present.
  */
 export declare function logTail_parseEnvNumber(raw: string | undefined, defaultValue: number): number;
-//# sourceMappingURL=parse-env-number.d.ts.map
