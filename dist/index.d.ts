@@ -29,4 +29,3 @@ export * from "./parse-env-number.js";
 export * from "./tail-process.js";
 export * from "./tokens-to-char-budget.js";
 export * from "./validation.js";
-//# sourceMappingURL=index.d.ts.map

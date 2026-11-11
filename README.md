@@ -100,3 +100,11 @@ The current scripts expect a source-first workspace toolchain.
 - Glob support is intentionally small: a single `*` in a basename pattern.
 - This package does not know which logs are meaningful for a project.
 - Higher-level UI, labels, command aliases, and retention policy belong in adapters.
+
+## Use from another repository
+
+Requires Node `>=22.0.0 <27`. Add this dependency; built JavaScript and declarations are included, with no install build step:
+
+```json
+"@gg-utils/platform-logs-core": "git+https://github.com/gg-utils/platform-logs-core.git#v0.2.0"
+```

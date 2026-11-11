@@ -25,4 +25,3 @@ export declare function logTail_isTailRunning(child: ChildProcess | null): boole
  * USAGE: pair with {@link logTail_spawnTail}; swallow errors because the process may already be gone.
  */
 export declare function logTail_stopTail(child: ChildProcess | null): void;
-//# sourceMappingURL=tail-process.d.ts.map

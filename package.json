@@ -1,56 +1,65 @@
 {
   "name": "@gg-utils/platform-logs-core",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.2.0",
   "description": "Product-neutral platform log discovery, budget, validation, and tail process primitives.",
   "license": "MIT",
   "type": "module",
   "sideEffects": false,
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./src/index.ts",
-      "default": "./src/index.ts"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     },
     "./discover-log-files": {
-      "types": "./src/discover-log-files.ts",
-      "default": "./src/discover-log-files.ts"
+      "types": "./dist/discover-log-files.d.ts",
+      "default": "./dist/discover-log-files.js"
     },
     "./parse-env-number": {
-      "types": "./src/parse-env-number.ts",
-      "default": "./src/parse-env-number.ts"
+      "types": "./dist/parse-env-number.d.ts",
+      "default": "./dist/parse-env-number.js"
     },
     "./tail-process": {
-      "types": "./src/tail-process.ts",
-      "default": "./src/tail-process.ts"
+      "types": "./dist/tail-process.d.ts",
+      "default": "./dist/tail-process.js"
     },
     "./tokens-to-char-budget": {
-      "types": "./src/tokens-to-char-budget.ts",
-      "default": "./src/tokens-to-char-budget.ts"
+      "types": "./dist/tokens-to-char-budget.d.ts",
+      "default": "./dist/tokens-to-char-budget.js"
     },
     "./validation": {
-      "types": "./src/validation.ts",
-      "default": "./src/validation.ts"
+      "types": "./dist/validation.d.ts",
+      "default": "./dist/validation.js"
     },
     "./package.json": "./package.json"
   },
   "files": [
     "dist/",
-    "src/",
-    "!src/**/*.unit.test.ts",
     "README.md",
-    "tsconfig.json",
-    "tsconfig.build.json"
+    "LICENSE"
   ],
   "engines": {
-    "node": ">=24.11.1 <25",
+    "node": ">=22.0.0 <27",
     "npm": ">=9.0.0"
   },
   "packageManager": "npm@11.12.1",
   "scripts": {
-    "build": "node ../../node_modules/typescript/bin/tsc -p tsconfig.build.json",
-    "type-check": "node ../../node_modules/typescript/bin/tsc --noEmit -p tsconfig.json",
-    "test": "node ../../node_modules/tsx/dist/cli.mjs --test \"src/**/*.unit.test.ts\""
+    "build": "tsc -p tsconfig.build.json",
+    "type-check": "tsc --noEmit -p tsconfig.json",
+    "test": "tsx --test \"src/**/*.unit.test.ts\"",
+    "lint": "eslint --max-warnings 0 .",
+    "check:dist": "node scripts/check-dist.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gg-utils/platform-logs-core.git"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "eslint": "9.39.5",
+    "tsx": "4.21.0",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.72.2"
   }
 }
